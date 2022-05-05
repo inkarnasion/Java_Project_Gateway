@@ -14,13 +14,13 @@ public class StatisticJsonController {
     @ResponseBody
     public ResponseEntity<List<CurrencyRate>> getCurrentCurrency() {
 
-
+return null;
     }
 
     @PostMapping("/history")
     @ResponseBody
     public ResponseEntity<List<CurrencyRate>> getCurrencyHistory() {
 
-        
+        return null;
     }
 }
