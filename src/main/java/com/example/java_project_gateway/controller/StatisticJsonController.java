@@ -22,9 +22,9 @@ public class StatisticJsonController {
     @ResponseBody
     public ResponseEntity<List<CurrencyRate>> getCurrentCurrency(@RequestBody CurrentExchangeRatesCommand command) {
         try {
-            return new ResponseEntity<List<CurrencyRate>>(command.getResult(statisticsCollectorService, "JSON_API"), HttpStatus.OK);
+            return new ResponseEntity<>(command.getResult(statisticsCollectorService, "JSON_API"), HttpStatus.OK);
         } catch (DuplicatedRequestIdException e) {
-            return new ResponseEntity<List<CurrencyRate>>(HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
 
@@ -32,9 +32,9 @@ public class StatisticJsonController {
     @ResponseBody
     public ResponseEntity<List<CurrencyRate>> getCurrencyHistory(@RequestBody ExchangeRatesHistoryCommand command) {
         try {
-            return new ResponseEntity<List<CurrencyRate>>(command.getResult(statisticsCollectorService, "JSON_API"), HttpStatus.OK);
+            return new ResponseEntity<>(command.getResult(statisticsCollectorService, "JSON_API"), HttpStatus.OK);
         } catch (DuplicatedRequestIdException e) {
-            return new ResponseEntity<List<CurrencyRate>>(HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
 }

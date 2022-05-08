@@ -7,6 +7,7 @@ import com.example.java_project_gateway.tools.Tools;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -27,7 +28,7 @@ public class CurrencyRateCollectorService {
      *
      * @throws JsonProcessingException
      */
-    // @Scheduled(fixedRate = 36_000_000)
+     @Scheduled(fixedRate = 36_000_000)
     private void collectRates() throws JsonProcessingException {
         System.out.println("Work");
 
